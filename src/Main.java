@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main
 {
@@ -68,22 +69,34 @@ public class Main
         }
         //Part C
         //Task 8 Die Roller table 5 columns, triple
+        Scanner in = new Scanner(System.in);
+        Random rnd = new Random();
+        int roll = 0;
+        int die1 = 0;
+        int die2 = 0;
+        int die3 = 0;
+        int dieRoll = 0;
+        String continueYN;
+
+        do
         {
-            Random rnd = new Random();
-            int roll, die1, die2, die3, dieRoll;
             System.out.println("Roll   Die1   Die2   Die3    Sum");
             System.out.println("________________________________");
             System.out.println();
-            for(int r=0; r <= 20; r++)
-            {
-                roll = r + 1;
-                die1 = rnd.nextInt( 6) + 1;
-                die2 = rnd.nextInt( 6) + 1;
-                die3 = rnd.nextInt(6) + 1;
-                dieRoll = die1 + die2 + die3;
-                System.out.printf("%4d %6d %6d %6d %6d\n", roll, die1, die2, die3, dieRoll);
-
-            }
+            for (int r = 0; r <= 20; r++)
+                {
+                    roll = r + 1;
+                    die1 = rnd.nextInt(6) + 1;
+                    die2 = rnd.nextInt(6) + 1;
+                    die3 = rnd.nextInt(6) + 1;
+                    dieRoll = die1 + die2 + die3;
+                    System.out.printf("%4d %6d %6d %6d %6d\n", roll, die1, die2, die3, dieRoll);
+                }
+            System.out.println(   "_______________________________________________________");
+            System.out.print("Enter any key to continue playing, Q to quit: ");
+            continueYN = in.nextLine();
+            continueYN.equalsIgnoreCase("Q");
         }
+        while(!(die1 == die2 && die2 == die3));
     }
 }

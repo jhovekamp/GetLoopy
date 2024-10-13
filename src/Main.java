@@ -76,7 +76,6 @@ public class Main
         int die2 = 0;
         int die3 = 0;
         int dieRoll = 0;
-        boolean done = false;
         String continueYN = "";
 
         System.out.println("Roll   Die1   Die2   Die3    Sum");
@@ -84,8 +83,6 @@ public class Main
         System.out.println();
 
         do
-        //while (die1 == die2 && die2 == die3)
-        //&& die1 != die3
         {
             roll++;
             die1 = gen.nextInt(6) + 1;
@@ -93,8 +90,7 @@ public class Main
             die3 = gen.nextInt(6) + 1;
             dieRoll = die1 + die2 + die3;
             System.out.printf("%4d %6d %6d %6d %6d\n", roll, die1, die2, die3, dieRoll);
-            // for (int r = 0; r <= 20; r++)
-            //     {
+
             while (die1 != die2 || die1 != die3)
             {
                 roll++;
@@ -107,12 +103,7 @@ public class Main
             System.out.println("___________________________________");
             System.out.print("Enter any key to continue playing, Q to quit: ");
             continueYN = in.nextLine();
-            //if(continueYN.equalsIgnoreCase("Q"))
-            //{
-              //  done = true;
-            //}
         }
-        //while (!done);
         while(!continueYN.equalsIgnoreCase("Q"));
 
     }
